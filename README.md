@@ -9,7 +9,22 @@ A curated list of awesome plugins, themes, resources, and SQLite tools specifica
 * [Theme Name](link) - Clean themes that support the new multi-pane DB layout without visual bugs.
 
 ## 📊 SQLite & Datalog Queries
-* [Query Title](link) - Copy-and-paste relational database queries for advanced dashboard views.
+### 📅 Active Task Dashboard
+Copy and paste this advanced query block into any Logseq 2.0 page to display a clean dashboard of your ongoing tasks sorted by priority.
+
+```clojure
+#+BEGIN_QUERY
+{:title [:h3 "📥 Active Database Tasks"]
+ :query [:find (pull ?b [*])
+         :where
+         [?b :block/marker ?marker]
+         [(contains? #{"NOW" "LATER" "TODO" "DOING"} ?marker)]]
+ :result-transform (fn [res]
+                     (sort-by (fn [b] (get b :block/priority "Z")) res))
+ :collapsed? false}
+#+END_QUERY
+```
+
 
 ## 🐳 Self-Hosting & Docker
 * [Tool Name](link) - Infrastructure scripts for hosting your own graph sync servers.
