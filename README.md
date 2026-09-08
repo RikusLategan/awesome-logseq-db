@@ -4,6 +4,7 @@ A curated list of awesome plugins, themes, resources, and SQLite tools specifica
 
 ## 🔌 Database-Ready Plugins
 * [Plugin Name](link) - One sentence description highlighting 2.0 DB compatibility.
+* https://github.com/kerim/logseq-db-sidekick
 
 ## 🎨 Layout-Verified Themes
 * [Theme Name](link) - Clean themes that support the new multi-pane DB layout without visual bugs.
